@@ -19,12 +19,12 @@ def process_video(path, width, height):
             resized = cv2.resize(image, (width, height), interpolation=cv2.INTER_AREA)
         
             # salva o frame
-            cv2.imwrite(f'{out}/frame{count}.jpg', image, [cv2.IMWRITE_JPEG_QUALITY, 70]) # <--- 70% de compressão JPEG
+            cv2.imwrite(f"{out}/frame{count}.jpg", image, [cv2.IMWRITE_JPEG_QUALITY, 70]) # <--- 70% de compressão JPEG
             count += 1
 
     video.release()
 
-    print(f"Frames salvos em '{out}'")
+    print(f"Frames salvos em \"{out}\"")
 
 if __name__ == '__main__':
     while(True):
@@ -33,4 +33,4 @@ if __name__ == '__main__':
         if path == 'quit':
             break;
         else:
-            process_video(f'./src/{path}', 360, 640) # proporção 9:16 (youtube shorts)
+            process_video(f"./src/{path}", 360, 640) # proporção 9:16 (youtube shorts)
